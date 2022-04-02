@@ -16,8 +16,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
-        <Route path="friend" element={<Friends />} />
-        <Route path="friend/:id" element={<Friend />} />
+        <Route path="friend" element={<Friends />} >
+          <Route path=":id" element={<Friend />} />
+        </Route>
         <Route path="/*" element={<NoMatch />} />
       </Routes>
     </div>
