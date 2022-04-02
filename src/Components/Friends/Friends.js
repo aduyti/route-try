@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Friends = () => {
     const [friends, setFriends] = useState([]);
@@ -8,14 +8,17 @@ const Friends = () => {
             .then(response => response.json())
             .then(data => setFriends(data))
     }, [])
+    const navigate = useNavigate();
+    const clickedFrnd = id => {
+        // navigate(`/friend/${id}`);
+        navigate(`${id}`);
+    }
     return (
         <div>
             {
                 friends.map(friend =>
-                    <div key={friend.id}>
-                        <Link
-                            to={`${friend.id}`}>{friend.name}
-                        </Link>
+                    <div key={friend.id} onClick={() => clickedFrnd(friend.id)}>
+                        {friend.name}
                     </div>
                 )
             }

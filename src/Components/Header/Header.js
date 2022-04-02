@@ -1,19 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import CustomLink from './CustomLink';
 
 const Header = () => {
-    const style = {
-        textDecoration: 'none',
-        margin: '5px'
-    }
     return (
         <div>
             my head
             <nav>
-                <Link style={style} to="/">Home</Link>
-                <Link style={style} to="about">About Us</Link>
-                <Link style={style} to="contact">Contact</Link>
-                <Link style={style} to="friend">Friends</Link>
+                <CustomLink to="/">Home</CustomLink>
+                <CustomLink to="about">About Us</CustomLink>
+                <CustomLink to="contact">Contact</CustomLink>
+                <CustomLink to="friend">Friends</CustomLink>
             </nav>
         </div>
     );
